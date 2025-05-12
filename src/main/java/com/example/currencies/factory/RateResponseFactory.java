@@ -10,6 +10,18 @@ import java.time.Instant;
 @UtilityClass
 public class RateResponseFactory {
 
+    public static GetExchangeRateResponse getSameCurrencyExchangeRateResponse(
+            GetExchangeRateRequest getExchangeRateRequest) {
+
+        return getRateResponse(BigDecimal.ONE, BigDecimal.ONE, getExchangeRateRequest);
+    }
+
+    public static GetExchangeRateResponse getZeroAmountExchangeRate(
+            GetExchangeRateRequest getExchangeRateRequest) {
+
+        return getRateResponse(BigDecimal.ZERO, BigDecimal.ZERO, getExchangeRateRequest);
+    }
+
     public static GetExchangeRateResponse getRateResponse(
             BigDecimal rate,
             BigDecimal reverseRate,
