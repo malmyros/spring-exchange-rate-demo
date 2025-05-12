@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: currency-conversion-app
+
+logging:
+  level:
+    com.example.currencies: INFO
+  structured:
+    format:
+      console: ecs
+
+management:
+  endpoint:
+    info:
+      enabled: true
+    gateway:
+      enabled: true
+    health:
+      show-components: always
+      show-details: always
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8080
